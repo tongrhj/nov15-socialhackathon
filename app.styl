@@ -1,0 +1,77 @@
+
+$cube--color = #1abc9c
+$cube--width = 8em
+
+.shape-container
+  width $cube--width
+  height $cube--width
+  position relative
+  perspective 500px
+  transform-origin 50% 50%
+  display inline-block
+  transform translate3d(0,0,0,0)
+
+.shape-cube
+  transform-style preserve-3d
+  width 100%
+  height 100%
+
+  &__side
+    position absolute
+    width $cube--width
+    height $cube--width
+    background-color darken($cube--color, 10%)
+
+    &--front
+      transform rotateY(0deg) translateZ($cube--width * 0.5)
+      background-color darken($cube--color, 10%)
+    &--back
+      transform rotateX(180deg) translateZ($cube--width * 0.5)
+      background-color darken($cube--color, 10%)
+    &--top
+      transform rotateX(90deg) translateZ($cube--width * 0.5)
+      background-color darken($cube--color, 40%)
+    &--bottom
+      transform rotateX(-90deg) translateZ($cube--width * 0.5)
+      background-color darken($cube--color, 40%)
+    &--left
+      transform rotateY(-90deg) translateZ($cube--width * 0.5)
+      background-color darken($cube--color, 25%)
+    &--right
+      transform rotateY(90deg) translateZ($cube--width * 0.5)
+      background-color darken($cube--color, 25%)
+
+.animate--spin
+  animation-name angle-spin
+  animation-duration 10s
+  animation-timing-function linear
+  animation-iteration-count infinite
+
+@keyframes angle-spin
+  0%
+    transform rotateZ(-50deg) rotateX(50deg) rotateY(-20deg)
+  100%
+    transform rotateZ(310deg) rotateX(-310deg) rotateY(340deg)
+
+
+//
+// COMMON STYLES
+// =============
+// Basic resets and structural demo styles
+//
+
+body,
+html
+  margin 0
+  padding 0
+
+body
+  background-color $cube--color
+  text-align center
+  margin-top 4em
+  margin-right 4em
+
+li
+  list-style none
+  margin 0
+  padding 0

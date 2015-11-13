@@ -1,0 +1,41 @@
+{
+  "name": "nov15-socialhackathon",
+  "version": "1.0.0",
+  "description": "Web App Social Hackathon",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run build && http-server",
+    "test": "standard",
+    "build": "npm run build-js && npm run build-css && npm run build-html",
+    "build-html": "cp index3.html dist/index.html",
+    "build-css": "stylus app.styl -o dist/",
+    "build-js": "browserify app.js --outfile dist/app.js --transform babelify",
+    "watch": "npm run start && npm run watch-html & npm run watch-js & npm run watch-css",
+    "watch-html": "watch-spawn -p 'index.html' npm run build-html",
+    "watch-css": "stylus -w app.styl -o dist/",
+    "watch-js": "watchify game.js --outfile game.dist.js --transform babelify --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tongrhj/nov15-socialhackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tongrhj/nov15-socialhackathon/issues"
+  },
+  "homepage": "https://github.com/tongrhj/nov15-socialhackathon#readme",
+  "dependencies": {
+    "babel-preset-es2015": "^6.1.2",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "http-server": "^0.8.5",
+    "standard": "^5.3.1",
+    "stylus": "^0.52.4",
+    "surge": "^0.17.2"
+  },
+  "devDependencies": {
+    "watch-spawn": "^1.0.6",
+    "watchify": "^3.6.0"
+  }
+}
