@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+    <link href="stylesheets/main.css" rel="stylesheet" />
+    <link href="c3.css" rel="stylesheet" type="text/css">
+    <style media="screen">
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        min-height: 100%;
+        font-family: 'Lato', sans-serif;
+        font-weight: 100;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #contents {
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        min-height: 200%; /* Calculate the number of sections before generating this number*/
+        flex: 1;
+      }
+
+      section:nth-of-type(2n+1)  {
+        display:flex;
+        flex-direction: row;
+        flex: 1;
+        min-height: calc(100vh + 200px);
+      }
+
+      section:nth-of-type(2n) {
+        display:flex;
+        flex-direction: row;
+        flex: 1;
+      }
+
+      .hero {
+        border: 1px solid black;
+        flex: 1;
+        margin: 0;
+        padding: 0;
+        background-image: url(http://www.samsung.com/global/galaxy/wearables/gear-vr/images/gear-vr_kv_m.jpg);
+      }
+
+      [class*="hero-info-"] {
+        position: absolute;
+        z-index: 2;
+      }
+
+      .hero-info-1 {
+        top: 47%;
+        left: auto;
+        right: 10%;
+        background: rgba(0,0,0,0.3);
+        padding: 1em;
+        color: white;
+      }
+
+      section:nth-child(2) {
+        display:block;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+      main > .brick-1 > div {
+        width: 126px;
+        height: 76px;
+      /* height 100px */
+      }
+      main > .brick-2 > div {
+        width: 103px;
+        height: 242px;
+      /* height 100px */
+      }
+      main > .brick-3 > div {
+        width: 137px;
+        height: 186px;
+      /* height 100px */
+      }
+      main > .brick-4 > div {
+        width: 59px;
+        height: 217px;
+      /* height 100px */
+      }
+      main > .brick-5 > div {
+        width: 132px;
+        height: 75px;
+      /* height 100px */
+      }
+      main > div {
+        border: 5px solid #555;
+        padding: 10px;
+        flex: auto;
+        overflow: hidden;
+        margin: 4px;
+        background: #5a5;
+        font-size: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+      }
+      main > div:before {
+        content: attr(data-sequence);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 36pt;
+        font-family: monospace;
+        color: #eee;
+      }
+      main > div > div {
+        background: #a55;
+        border-style: none;
+        min-width: 33vw;
+      }
+
+      main > div h1 {
+        font-size: 40px;
+      }
+
+      #chart {
+        min-width: 50vw;
+      }
+    </style>
+
+</head>
+<body>
+    <!-- <header>
+        <hgroup>
+            <h1>Header</h1>
+            <h2>Subheader</h2>
+        </hgroup>
+    </header> -->
+    <!-- <nav>
+        <ul>
+            <li><a href="#">Menu Option 1</a></li>
+            <li><a href="#">Menu Option 2</a></li>
+        </ul>
+    </nav> -->
+    <div id="contents">
+      <section>
+        <div class="hero">
+          <div class="hero-info-1">
+            <h1>JieZhen Wu</h1>
+            <h2>Executive Director, The Hidden Good</h2>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <main>
+          <div>
+            <h1>Volunteer Hours</h1>
+            <div id="chart"></div>
+          </div>
+          <div data-sequence='2' class="brick-2">
+            <div></div>
+          </div>
+          <div data-sequence='3' class="brick-3">
+            <div></div>
+          </div>
+          <div data-sequence='4' class="brick-4">
+            <div></div>
+          </div>
+          <div data-sequence='5' class="brick-5">
+            <div></div>
+          </div>
+        </main>
+      </section>
+
+      <section>
+        <div class="hero">
+          <img src="http://www.samsung.com/global/galaxy/common/icons/color1/logo_samsung-gear-vr.png" alt="" />
+        </div>
+      </section>
+
+    </div>
+    <!-- <aside>
+        <section>
+            <h1>Links</h1>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+            </ul>
+        </section>
+        <figure>
+            <img width="85" height="85"
+                src="http://domain.tld/path/to/image.jpg"
+                alt="foobar" />
+            <figcaption>Foobar</figcaption>
+        </figure>
+    </aside> -->
+    <footer>Footer</footer>
+
+    <!-- Load d3.js and c3.js -->
+    <script src="d3.min.js" charset="utf-8"></script>
+    <script src="c3.min.js"></script>
+    <script>
+      var chart = c3.generate({
+          bindto: '#chart',
+          data: {
+            columns: [
+              ['data1', 30, 200, 100, 400, 150, 250],
+              ['data2', 50, 20, 10, 40, 15, 25]
+            ]
+          }
+      });
+    </script>
+</body>
+</html>

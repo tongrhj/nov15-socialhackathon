@@ -1,0 +1,22 @@
+body {
+  display:flex;
+  flex-direction: column;
+  font: 13px Helvetica;
+}
+
+header {
+  height: 39px;
+}
+
+main {display:flex;align-content: center;}
+
+section {
+  width: 100vw;
+}
+section#personal-statement {
+  min-height: calc(100vh -39px);
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  background-image: url(http://www.samsung.com/global/galaxy/wearables/gear-vr/images/gear-vr_kv_m.jpg);
+}

@@ -1,0 +1,59 @@
+img {
+	float: left;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+
+	shape-outside: circle();
+	shape-margin: 15px;
+}
+
+.element {
+	float: right;
+	width: 200px;
+	height: 100px;
+	shape-outside: inset(0px round 100px) border-box;
+}
+
+p {
+  animation: pulse 3s infinite;
+}
+
+img {
+  position: absolute;
+  animation: move 5s infinite;
+}
+
+@keyframes pulse {
+  20% {
+    color: red;
+  }
+  100% {
+    color: blue;
+  }
+}
+
+@keyframes move {
+  0% {
+    /*top: 0px;
+    width: 150px;
+    height: 150px;
+    opacity: 1;*/
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    transform: translateY(0) scale(0.95, 0.95);
+  }
+
+  50% {
+    /*top: 25px;
+    width: 200px;
+    height: 200px;*/
+  }
+
+  100% {
+    /*top: 400px;
+    width: 500px;
+    height: 500px;*/
+    box-shadow: 0 11px 18px rgba(0,0,0,0.2);
+    transform: translateY(-20px) scale(1, 1);
+  }
+}
