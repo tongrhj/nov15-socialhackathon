@@ -2,99 +2,70 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Volunteer Profile Page | Jared Tong</title>
-    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
-    <!-- Load c3.css -->
-    <link href="c3.css" rel="stylesheet" type="text/css">
+    <title>Lionheart | Profile Page</title>
+    <link rel="stylesheet" href="app.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="c3.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
+    <header>
+      <h1>Lionheart Header</h1>
+    </header>
+    <main>
+      <section id="personal-statement">
+        <div>
+          <h2>My Personal Statement</h2>
+        </div>
+      </section>
+      <section>
+        <div class="responsive-wrapper">
+          <div class="column-1">
+            <div class="profile">
+              <img src="http://www.freelanceme.net/Images/default%20profile%20picture.png">
+            </div>
+            <div class="verifications">
+              <p>Verification Information</p>
+              <img src="http://www.smwcentral.net/images/trophies/contests/wldc-bronze.png" alt="" />
+              <img src="http://www.smwcentral.net/images/trophies/contests/wldc-bronze.png" alt="" />
+              <img src="http://www.smwcentral.net/images/trophies/contests/wldc-bronze.png" alt="" />
+              <img src="http://www.smwcentral.net/images/trophies/contests/wldc-bronze.png" alt="" />
+              <img src="http://www.smwcentral.net/images/trophies/contests/wldc-bronze.png" alt="" />
+              <img src="http://www.smwcentral.net/images/trophies/contests/wldc-bronze.png" alt="" />
+              <img src="http://www.smwcentral.net/images/trophies/contests/wldc-bronze.png" alt="" />
+              <img src="http://www.smwcentral.net/images/trophies/contests/wldc-bronze.png" alt="" />
+            </div>
+          </div>
+          <div class="column-2">
+            <section class="winbadge">
+              Win Badges here
+            </section>
 
+            <section class="hourstats">
+              <h3>Volunteer Hours</h3>
+              <button id="totalHours">Total Hours</button>
+              <button id="monthlyHours">Hours per Month</button>
 
-    
+              <div id="hoursChart">
 
-    <svg class="pie" width="300" height="100"></svg>
+              </div>
+            </section>
 
-    <div id="chart"></div>
+            <section class="winstats">
+              You are in the top 30% of Volunteers in Singapore
+              <div id="rankChart">
 
-    <!-- Load d3.js and c3.js -->
-    <script src="d3.min.js" charset="utf-8"></script>
-    <script src="c3.min.js"></script>
-    <script>
-    var chart = c3.generate({
-        bindto: '#chart',
-        data: {
-          columns: [
-            ['data1', 30, 200, 100, 400, 150, 250],
-            ['data2', 50, 20, 10, 40, 15, 25]
-          ]
-        }
-    });
+              </div>
+            </section>
 
-    var sales = [
-      { product: 'Hoodie',  count: 12 },
-      { product: 'Jacket',  count: 7 },
-      { product: 'Snuggie', count: 6 },
-      ];
+            <section class="winstats">
+              You are in the top 22th percentile of Volunteers in the World
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
 
-      var pie = d3.layout.pie()
-    .value(function(d) { return d.count })
-
-    var slices = pie(sales);
-    // the result looks roughly like this:
-    [
-      {
-        data: sales[0],
-        endAngle: 3.0159289474462017,
-        startAngle: 0,
-        value: 12
-      },
-      {
-        data: sales[1],
-        startAngle: 3.0159289474462017,
-        endAngle: 4.775220833456486,
-        value: 7
-      },
-      {
-        data: sales[2],
-        startAngle: 4.775220833456486,
-        endAngle: 6.283185307179587,
-        value: 6
-      }
-    ]
-
-    var arc = d3.svg.arc()
-    .innerRadius(0)
-    .outerRadius(50);
-
-    // helper that returns a color based on an ID
-    var color = d3.scale.category10();
-
-    var svg = d3.select('svg.pie');
-    var g = svg.append('g')
-      .attr('transform', 'translate(200, 50)')
-
-    g.selectAll('path.slice')
-      .data(slices)
-        .enter()
-          .append('path')
-            .attr('class', 'slice')
-            .attr('d', arc)
-            .attr('fill', function(d) {
-              return color(d.data.product);
-            });
-
-    // building a legend is as simple as binding
-    // more elements to the same data. in this case,
-    // <text> tags
-    svg.append('g')
-      .attr('class', 'legend')
-        .selectAll('text')
-        .data(slices)
-          .enter()
-            .append('text')
-              .text(function(d) { return '• ' + d.data.product; })
-              .attr('fill', function(d) { return color(d.data.product); })
-              .attr('y', function(d, i) { return 20 * (i + 1); })
-    </script>
+  <script src="d3.min.js" charset="utf-8"></script>
+  <script src="c3.min.js" charset="utf-8"></script>
+  <script src="app.js"></script>
   </body>
 </html>

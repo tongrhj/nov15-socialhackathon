@@ -1,98 +1,92 @@
-.shape-container {
-  width: 8em;
-  height: 8em;
-  position: relative;
-  perspective: 500px;
-  transform-origin: 50% 50%;
-  display: inline-block;
-  transform: translate3d(0, 0, 0, 0);
-}
-.shape-cube {
-  transform-style: preserve-3d;
-  width: 100%;
-  height: 100%;
-}
-.shape-cube__side {
-  position: absolute;
-  width: 8em;
-  height: 8em;
-  background-color: #17a98c;
-}
-.shape-cube__side--front {
-  transform: rotateY(0deg) translateZ(4em);
-  background-color: #17a98c;
-}
-.shape-cube__side--back {
-  transform: rotateX(180deg) translateZ(4em);
-  background-color: #17a98c;
-}
-.shape-cube__side--top {
-  transform: rotateX(90deg) translateZ(4em);
-  background-color: #10715e;
-}
-.shape-cube__side--bottom {
-  transform: rotateX(-90deg) translateZ(4em);
-  background-color: #10715e;
-}
-.shape-cube__side--left {
-  transform: rotateY(-90deg) translateZ(4em);
-  background-color: #138d75;
-}
-.shape-cube__side--right {
-  transform: rotateY(90deg) translateZ(4em);
-  background-color: #138d75;
-}
-.animate--spin {
-  animation-name: angle-spin;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
+html,
 body,
-html {
+header h1 {
   margin: 0;
   padding: 0;
 }
 body {
-  background-color: #1abc9c;
-  text-align: center;
-  margin-top: 4em;
-  margin-right: 4em;
+  display: flex;
+  flex-direction: column;
+  font: 13px Helvetica;
 }
-li {
-  list-style: none;
+header {
+  height: 39px;
+  margin: 0;
+  background-color: #00fa9a;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+section {
+  width: 100vw;
+}
+section#personal-statement {
+  min-height: 100vh;
+  flex: 1;
   margin: 0;
   padding: 0;
+  background-image: url("http://www.samsung.com/global/galaxy/wearables/gear-vr/images/gear-vr_kv_m.jpg");
 }
-@-moz-keyframes angle-spin {
-  0% {
-    transform: rotateZ(-50deg) rotateX(50deg) rotateY(-20deg);
-  }
-  100% {
-    transform: rotateZ(310deg) rotateX(-310deg) rotateY(340deg);
-  }
+.responsive-wrapper {
+  width: auto;
+  background-color: #fa8072;
 }
-@-webkit-keyframes angle-spin {
-  0% {
-    transform: rotateZ(-50deg) rotateX(50deg) rotateY(-20deg);
-  }
-  100% {
-    transform: rotateZ(310deg) rotateX(-310deg) rotateY(340deg);
-  }
+div.responsive-wrapper {
+  margin: 0 auto;
+  padding: 0 12.5px;
+  padding-top: 25px;
+  display: flex;
+  flex-direction: row;
 }
-@-o-keyframes angle-spin {
-  0% {
-    transform: rotateZ(-50deg) rotateX(50deg) rotateY(-20deg);
-  }
-  100% {
-    transform: rotateZ(310deg) rotateX(-310deg) rotateY(340deg);
+@media (min-width: 768px) {
+  div.responsive-wrapper {
+    width: 745px;
   }
 }
-@keyframes angle-spin {
-  0% {
-    transform: rotateZ(-50deg) rotateX(50deg) rotateY(-20deg);
+@media (min-width: 1100px) {
+  div.responsive-wrapper {
+    width: 1045px;
   }
-  100% {
-    transform: rotateZ(310deg) rotateX(-310deg) rotateY(340deg);
-  }
+}
+div.responsive-wrapper > div {
+  min-height: 1px;
+}
+div.responsive-wrapper div.column-1 {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  background-color: #008000;
+}
+div.responsive-wrapper div.column-1 div.profile {
+  flex: 1;
+}
+div.responsive-wrapper div.column-1 div.verifications {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+div.responsive-wrapper div.column-1 div.verifications p {
+  flex-grow: 1;
+  width: 100%;
+  text-align: center;
+}
+div.responsive-wrapper div.column-2 {
+  width: 66.6%;
+  background-color: #00bfff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+div.responsive-wrapper div.column-2 section {
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  transform: translateY(0) scale(0.95, 0.95);
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 12px 6px;
+  margin-bottom: 12px;
 }
