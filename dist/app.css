@@ -60,7 +60,7 @@ div.responsive-wrapper div.column-1 {
   background-color: #008000;
 }
 div.responsive-wrapper div.column-1 div.profile {
-  flex: 1;
+  text-align: center;
 }
 div.responsive-wrapper div.column-1 div.verifications {
   display: flex;
