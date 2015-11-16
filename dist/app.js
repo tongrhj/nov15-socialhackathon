@@ -59,31 +59,37 @@ var rankChart = c3.generate({
     bindto: '#rankChart',
     data: {
         columns: [
-            ['data', 0]
+            ['data', -100]
         ],
         type: 'gauge',
-        onclick: function (d, i) { console.log("onclick", d, i); },
-        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+        // onclick: function (d, i) { console.log("onclick", d, i); },
+        // onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        // onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    },
+    tooltip: {
+      show: false
     },
     gauge: {
+        units: ' %',
+        min: -100,
+        max: 100,
         label: {
             format: function(value, ratio) {
-                return ratio;
+                return value;
             },
             show: false // to turn off the min/max labels.
         },
-//    min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
-//    max: 100, // 100 is default
-//    units: ' %',
-//    width: 39 // for adjusting arc thickness
+      min: -100, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
+      max: 100, // 100 is default
+      units: ' %',
+      width: 60 // for adjusting arc thickness
     },
     color: {
         pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
         threshold: {
 //            unit: 'value', // percentage is default
 //            max: 200, // 100 is default
-            values: [30, 60, 90, 100]
+            values: [30, 40, 50, 60]
         }
     },
     size: {
@@ -91,8 +97,12 @@ var rankChart = c3.generate({
     }
 });
 
+var hpRankChartNumber = 0.69999999;
+
+var rankChartNumber = Math.ceil(hpRankChartNumber * 100)
+
 setTimeout(function () {
     rankChart.load({
-        columns: [['data', 70]]
+        columns: [['data', rankChartNumber]]
     });
 }, 3000);

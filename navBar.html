@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Navbar</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <style media="screen">
+      .animate-right {
+        transform: translate3d( 275px, 0, 0 );
+      }
+
+      .animate-left {
+        transform: translate3d( 0, 0, 0 );
+      }
+    </style>
+
+  </head>
+  <body>
+    <section id="slideNav" style="display: block;position: absolute;top: 0;left: 0;width:275px;padding: 15px 25px;margin: 0;background: #5c5c5c;z-index:0;transition: transform .25s ease-in-out;height:100vh;">
+
+      <h3 style="color:#fa5c4f;text-align:center;">hello, beautiful person</h3>
+
+      <ul style="list-style: none;margin:0;padding-top:15px;padding-left: 30px;">
+        <li style="color:white;padding:16px 49px 16px 16px;font-size: 12px;letter-spacing: 1px;display:block;font-weight:700;"><a title="Home" href="/" style="color:white;text-decoration:none;">How It Works</a></li>
+        <li style="color:white;padding:16px 49px 16px 16px;font-size: 12px;letter-spacing: 1px;display:block;font-weight:700;"><a title="Home" href="/" style="color:white;text-decoration:none;">Our Story</a></li>
+        <li style="color:white;padding:16px 49px 16px 16px;font-size: 12px;letter-spacing: 1px;display:block;font-weight:700;"><a title="Home" href="/" style="color:white;text-decoration:none;">Challenges</a></li>
+        <hr style="border:1px solid gray;"></hr>
+        <li style="color:white;padding:16px 49px 16px 16px;font-size: 12px;letter-spacing: 1px;display:block;font-weight:700;"><a title="Home" href="/" style="color:white;text-decoration:none;">Profile</a></li>
+        <li style="color:white;padding:16px 49px 16px 16px;font-size: 12px;letter-spacing: 1px;display:block;font-weight:700;"><a title="Home" href="/" style="color:white;text-decoration:none;">Dashboard</a></li>
+        <li style="color:white;padding:16px 49px 16px 16px;font-size: 12px;letter-spacing: 1px;display:block;font-weight:700;"><a title="Home" href="/" style="color:white;text-decoration:none;">Messages</a></li>
+        <li style="color:white;padding:16px 49px 16px 16px;font-size: 12px;letter-spacing: 1px;display:block;font-weight:700;"><a title="Home" href="/" style="color:white;text-decoration:none;">Settings</a></li>
+        <li style="color:white;padding:16px 49px 16px 16px;font-size: 12px;letter-spacing: 1px;display:block;font-weight:700;"><a title="Home" href="/" style="color:white;text-decoration:none;">Logout</a></li>
+      </ul>
+
+    </section>
+
+    <div id="slideBody" style="position: relative;z-index: 20;background-color:lightgrey;transition: transform .25s ease-in-out;">
+      <nav class="navbar navbar-default navbar-static-top" style="background:rgb(14,93,137);color:white;">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" style="display:block;float:left;border:none;">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar" style="background-color:white;"></span>
+              <span class="icon-bar" style="background-color:white;"></span>
+              <span class="icon-bar" style="background-color:white;"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="color:white;">Careville</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#" style="color:white;"><span class="glyphicon glyphicon-filter" style="padding-right:5px;"></span> Filter</a></li>
+              <li><a href="inbox.html" style="color:white;"><span class="glyphicon glyphicon-inbox" style="padding-right:5px;"></span> <span class="badge" style="background-color: rgba(255,255,255,0.2);padding:3px 12px;">4</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <div style="row"></div>
+      </main>
+    </div>
+
+
+    <script type="text/javascript">
+      'use strict'
+
+      function slideNav() {
+        console.log('click')
+        var navBtn = document.querySelector('button.navbar-toggle');
+        var slideBody = document.querySelector('#slideBody');
+        if (slideBody.classList.contains('animate-right')) {
+          slideBody.classList.add('animate-left')
+          slideBody.classList.remove('animate-right')
+          // slideBody.removeEventListener('click')
+          // navBtn.addEventListener('click', slideNav);
+          console.log('slide in')
+        } else {
+          slideBody.classList.remove('animate-left')
+          slideBody.classList.add('animate-right')
+          // navBtn.removeEventListener('click', slideNav);
+          // slideBody.addEventListener('click', slideNav);
+          console.log('slide out')
+        }
+      }
+
+      document.querySelector('button.navbar-toggle').addEventListener('click', slideNav);
+
+    </script>
+  </body>
+</html>

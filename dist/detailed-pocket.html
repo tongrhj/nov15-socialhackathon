@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <style media="screen">
+      .animate-right {
+        transform: translate3d( 275px, 0, 0 );
+      }
+
+      .animate-left {
+        transform: translate3d( 0, 0, 0 );
+      }
+    </style>
+
+  </head>
+  <body style="background-color: lightgrey;">
+    <!-- Static navbar -->
+    <section id="slideNav" style="display: block;position: absolute;top: 0;left: 0;width:275px;padding: 15px 25px;margin: 0;background: #4D4D4D;z-index:0;transition: transform .25s ease-in-out;height:100vh;">
+
+      <h3 style="color:#fa5c4f;text-align:center;">hello, beautiful person</h3>
+
+      <ul style="list-style: none;margin:0;padding-top:15px;padding-left: 30px;">
+        <li style="color:white;padding:16px 49px 16px 16px;text-transform: uppercase;font-size: 12px;letter-spacing: 3px;display:block;"><a title="Home" href="/" style="color:white;text-decoration:none;">Home</a></li>
+        <li style="color:white;padding:16px 49px 16px 16px;text-transform: uppercase;font-size: 12px;letter-spacing: 3px;display:block;"><a title="About Me" href="/about" style="color:white;text-decoration:none;">Volunteer</a></li>
+        <li><a href="inbox.html" style="text-decoration:none;color:white;padding:16px 49px 16px 16px;text-transform: uppercase;font-size: 12px;letter-spacing: 3px;display:block;"><span class="glyphicon glyphicon-inbox" style="padding-right:5px;"></span> Inbox</a></li>
+        <li><a href="awardpage.html" style="text-decoration:none;color:white;padding:16px 49px 16px 16px;text-transform: uppercase;font-size: 12px;letter-spacing: 3px;display:block;"><span class="glyphicon glyphicon-user" style="padding-right:5px;"></span> Profile</a></li>
+      </ul>
+
+    </section>
+
+    <div id="slideBody" style="position: relative;z-index: 20;background-color:lightgrey;transition: transform .25s ease-in-out;">
+      <nav class="navbar navbar-default navbar-static-top" style="background:#fa5c4f;color:white;">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle hidden-sm hidden-md hidden-lg" style="display:block;float:left;">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="color:white;">Lionheart</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about" style="color:white;">Volunteer</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="inbox.html" style="color:white;"><span class="glyphicon glyphicon-inbox" style="padding-right:5px;"></span></a></li>
+
+              <li><a href="inbox.html" style="color:white;"><span class="glyphicon glyphicon-user" style="padding-right:5px;"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        </nav>
+
+        <main>
+          <div class="container" style="padding-bottom:20px;">
+            <div class="row">
+
+              <div class="col-md-2 hidden-xs hidden-sm">
+                <a class="text-muted" href="inbox.html"><span class="glyphicon glyphicon-chevron-left"></span> Back to Inbox</a>
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-10" style="padding:0;">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <div class="jumbotron" style="padding-left:30px;padding-right:30px;min-height:420px;background: no-repeat center/cover url(http://vivreactivewear.com/wp-content/uploads/2015/02/11004737_10152639437886232_1037399750_n.jpg)">
+                    </div>
+
+                    <h1>Opportunity Title</h1>
+                    <h2 style="text-transform: uppercase;color: #CCC;letter-spacing: 2px;font-size: 11px;margin-bottom: 5px;">description</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <div style="display:flex;flex-direction:row;">
+                      <a href="whatsapp://send?text={{my_meta.og_title.value}} - http://{{ request.get_host }}{{entity.url}}%3Futm_source=whatsapp%26utm_medium=referral" data-action="share/whatsapp/share" onmousedown="_paq.push(['trackEvent','Share on Whatsapp','Mobile','{{request.get_full_path}}']); ga('send', 'event','Share on Whatsapp','Mobile','{{request.get_full_path}}');ga('mobileTracker.send', 'event','Share on Whatsapp','Mobile','{{request.get_full_path}}');">
+                      <img src="http://www.niemanlab.org/images/whatsapp-share-button.png" style="width:113px;height:57px;"></a>
+
+                      <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                    </div>
+
+                    <div style="margin-top:15px;border-top:1px solid grey;padding-top:15px;">
+                      <div class="pull-right">
+                        <button type="button" class="btn btn-success">
+                          Volunteer
+                        </button>
+                        <a href="#">
+                          Archive
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </main>
+    </div>
+
+    <!-- Facebook Like Button Script -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=76815303544";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script type="text/javascript">
+      'use strict'
+      function slideNav() {
+        console.log('click')
+        var navBtn = document.querySelector('button.navbar-toggle');
+        var slideBody = document.querySelector('#slideBody');
+        if (slideBody.classList.contains('animate-right')) {
+          slideBody.classList.add('animate-left')
+          slideBody.classList.remove('animate-right')
+          //slideBody.removeEventListener('click')
+          // navBtn.addEventListener('click', slideNav);
+          console.log('slide in')
+        } else {
+          slideBody.classList.remove('animate-left')
+          slideBody.classList.add('animate-right')
+          // navBtn.removeEventListener('click', slideNav);
+          // slideBody.addEventListener('click', slideNav);
+          console.log('slide out')
+        }
+      }
+      document.querySelector('button.navbar-toggle').addEventListener('click', slideNav);
+    </script>
+  </body>
+</html>
